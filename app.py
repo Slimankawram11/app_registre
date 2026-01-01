@@ -77,7 +77,7 @@ with st.sidebar:
     
     st.divider()
     
-    st.subheader("📋 Supported Prestataires")
+    st.subheader("Supported Prestataires")
     for p in SUPPORTED_PRESTATAIRES:
         st.write(f"• {p}")
 
@@ -85,7 +85,7 @@ with st.sidebar:
 col1, col2 = st.columns([2, 1])
 
 with col1:
-    st.header("📁 Upload Data Files")
+    st.header("Upload Data Files")
     
     # Prestataire selection
     prestataire = st.selectbox(
@@ -103,7 +103,7 @@ with col1:
     )
 
 with col2:
-    st.header("📊 Status")
+    st.header("Status")
     
     # Status indicators
     if etl_file:
@@ -119,7 +119,7 @@ with col2:
     if uploaded_files:
         st.success(f"✅ {len(uploaded_files)} file(s) uploaded")
     else:
-        st.info("📁 No data files uploaded")
+        st.info("No data files uploaded")
 
 # Show uploaded files
 if uploaded_files:
@@ -193,7 +193,7 @@ if st.button("🔄 Transform", type="primary", use_container_width=True):
                     filename = f"{prestataire}_Registre_Agrege_{timestamp}.xlsx"
                     
                     st.download_button(
-                        label="📥 Download Output File",
+                        label="Download Output File",
                         data=output,
                         file_name=filename,
                         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
