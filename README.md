@@ -1,8 +1,8 @@
-# 🗑️ Urbyn Waste Registry Transformer
+# 🗑️ Urbyn - Transformateur de Registre des Déchets
 
-A Streamlit web application to transform waste registry data from various prestataires into the Urbyn aggregated format.
+Application web Streamlit pour transformer les données de registre des déchets de différents prestataires vers le format agrégé Urbyn.
 
-## Supported Prestataires
+## Prestataires Supportés
 
 - Veolia
 - Suez
@@ -13,134 +13,134 @@ A Streamlit web application to transform waste registry data from various presta
 - Screlec
 - Trackdechet
 
-## 🚀 Quick Deploy to Streamlit Cloud (Recommended)
+## 🚀 Déploiement Rapide sur Streamlit Cloud (Recommandé)
 
-### Step 1: Create a GitHub Repository
+### Étape 1 : Créer un Compte GitHub
 
-1. Go to [github.com](https://github.com) and sign in (or create an account)
-2. Click the **+** button in the top right → **New repository**
-3. Name it: `waste-registry-transformer`
-4. Keep it **Private** (recommended) or Public
-5. Click **Create repository**
+1. Allez sur [github.com](https://github.com) et connectez-vous (ou créez un compte)
+2. Cliquez sur le bouton **+** en haut à droite → **New repository**
+3. Nom : `waste-registry-transformer`
+4. Gardez-le **Private** (recommandé) ou Public
+5. Cliquez sur **Create repository**
 
-### Step 2: Upload Files
+### Étape 2 : Téléverser les Fichiers
 
-1. In your new repository, click **Add file** → **Upload files**
-2. Drag and drop ALL files from this folder:
+1. Dans votre nouveau dépôt, cliquez sur **Add file** → **Upload files**
+2. Glissez-déposez TOUS les fichiers de ce dossier :
    - `app.py`
    - `etl_processor.py`
    - `requirements.txt`
    - `README.md`
-3. Click **Commit changes**
+3. Cliquez sur **Commit changes**
 
-### Step 3: Deploy on Streamlit Cloud
+### Étape 3 : Déployer sur Streamlit Cloud
 
-1. Go to [share.streamlit.io](https://share.streamlit.io)
-2. Sign in with your GitHub account
-3. Click **New app**
-4. Select:
-   - **Repository**: `your-username/waste-registry-transformer`
-   - **Branch**: `main`
-   - **Main file path**: `app.py`
-5. Click **Deploy**
+1. Allez sur [share.streamlit.io](https://share.streamlit.io)
+2. Connectez-vous avec votre compte GitHub
+3. Cliquez sur **New app**
+4. Sélectionnez :
+   - **Repository** : `votre-nom/waste-registry-transformer`
+   - **Branch** : `main`
+   - **Main file path** : `app.py`
+5. Cliquez sur **Deploy**
 
-### Step 4: Wait & Access
+### Étape 4 : Attendre et Accéder
 
-- Deployment takes 2-3 minutes
-- Once ready, you'll get a URL like: `https://your-app-name.streamlit.app`
-- Share this URL with your team!
+- Le déploiement prend 2-3 minutes
+- Une fois prêt, vous obtiendrez une URL comme : `https://votre-app.streamlit.app`
+- Partagez cette URL avec votre équipe !
 
 ---
 
-## 💻 Run Locally (Alternative)
+## 💻 Exécuter Localement (Alternative)
 
-### Prerequisites
+### Prérequis
 
-- Python 3.8 or higher
-- pip (Python package manager)
+- Python 3.8 ou supérieur
+- pip (gestionnaire de paquets Python)
 
 ### Installation
 
 ```bash
-# Clone or download the files
+# Clonez ou téléchargez les fichiers
 cd waste-registry-transformer
 
-# Install dependencies
+# Installez les dépendances
 pip install -r requirements.txt
 
-# Run the app
+# Lancez l'application
 streamlit run app.py
 ```
 
-The app will open in your browser at `http://localhost:8501`
+L'application s'ouvrira dans votre navigateur à `http://localhost:8501`
 
 ---
 
-## 📖 How to Use
+## 📖 Comment Utiliser
 
-1. **Upload Configuration Files** (sidebar):
-   - ETL Mapping File (`ETL _ Mapping registre déchets prestataire vers Urbyn.xlsx`)
-   - Template File (`Modèle vierge de Registre des déchets...xlsx`)
+1. **Téléverser les Fichiers de Configuration** (barre latérale) :
+   - Fichier ETL Mapping (`ETL _ Mapping registre déchets prestataire vers Urbyn.xlsx`)
+   - Fichier Modèle (`Modèle vierge de Registre des déchets...xlsx`)
 
-2. **Upload Data Files**:
-   - Select the prestataire (or use auto-detect)
-   - Upload one or more files from that prestataire
+2. **Téléverser les Fichiers de Données** :
+   - Sélectionnez le prestataire (ou utilisez la détection automatique)
+   - Téléversez un ou plusieurs fichiers de ce prestataire
 
-3. **Transform**:
-   - Click the "Transform" button
-   - Review the results and warnings
+3. **Transformer** :
+   - Cliquez sur le bouton "Transform"
+   - Vérifiez les résultats et les avertissements
 
-4. **Download**:
-   - Click "Download Output File" to get the transformed Excel file
-
----
-
-## ⚙️ Adding New Mappings
-
-The app relies on the ETL mapping file for:
-- **Waste type mappings**: Déchet sheet
-- **Site mappings**: Site sheet
-- **Treatment mappings**: Traitement générique sheet
-- **Aggregation mappings**: Paramètres sheet
-
-To add support for new waste types or sites, update the ETL mapping file.
+4. **Télécharger** :
+   - Cliquez sur "Download Output File" pour obtenir le fichier Excel transformé
 
 ---
 
-## 🔧 Troubleshooting
+## ⚙️ Ajouter de Nouveaux Mappings
 
-### "No site mapping" warnings
-- Add the missing site to the ETL file's Site sheet
-- Make sure the prestataire pattern matches
+L'application utilise le fichier ETL mapping pour :
+- **Mappings des types de déchets** : Feuille Déchet
+- **Mappings des sites** : Feuille Site
+- **Mappings des traitements** : Feuille Traitement générique
+- **Mappings d'agrégation** : Feuille Paramètres
+
+Pour ajouter le support de nouveaux types de déchets ou sites, mettez à jour le fichier ETL mapping.
+
+---
+
+## 🔧 Dépannage
+
+### Avertissements "No site mapping"
+- Ajoutez le site manquant dans la feuille Site du fichier ETL
+- Vérifiez que le pattern du prestataire correspond
 
 ### "Could not auto-detect prestataire"
-- Select the prestataire manually from the dropdown
-- Or rename your file to include the prestataire name
+- Sélectionnez le prestataire manuellement dans le menu déroulant
+- Ou renommez votre fichier pour inclure le nom du prestataire
 
-### File format errors
-- Make sure Excel files are `.xlsx` format
-- For CSV files, use semicolon (`;`) separator for Elise
+### Erreurs de format de fichier
+- Assurez-vous que les fichiers Excel sont au format `.xlsx`
+- Pour les fichiers CSV, utilisez le séparateur point-virgule (`;`) pour Elise
 
 ---
 
-## 📁 File Structure
+## 📁 Structure des Fichiers
 
 ```
 waste-registry-transformer/
-├── app.py              # Main Streamlit application
-├── etl_processor.py    # ETL transformation logic
-├── requirements.txt    # Python dependencies
-└── README.md           # This file
+├── app.py              # Application Streamlit principale
+├── etl_processor.py    # Logique de transformation ETL
+├── requirements.txt    # Dépendances Python
+└── README.md           # Ce fichier
 ```
 
 ---
 
-## 🛡️ Privacy
+## 🛡️ Confidentialité
 
-- All processing happens in the app (no data sent elsewhere)
-- Use a **Private** GitHub repository if your data is sensitive
-- Streamlit Cloud processes data in memory only
+- Tout le traitement se fait dans l'application (aucune donnée envoyée ailleurs)
+- Utilisez un dépôt GitHub **Privé** si vos données sont sensibles
+- Streamlit Cloud traite les données en mémoire uniquement
 
 ---
 
-Built for Capgemini | Urbyn Waste Registry System
+Développé pour Capgemini | Système Urbyn de Registre des Déchets
